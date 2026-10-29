@@ -1,0 +1,57 @@
+<div id="pag-growth">
+<h2>PAG · rozwój spółki</h2>
+<div class="viz-controls"><label class="form-label">Miara<select class="form-select" id="pag-metric"><option value="value_gold">Wartość spółki · Gold</option><option value="shares">Wyemitowane akcje</option><option value="leandro_shares">Akcje Leandro Daniels</option><option value="ownership">Udział Leandro · %</option><option value="perShare">Wartość aktywów na akcję · Gold</option><option value="factories">Fabryki</option></select></label></div>
+<div id="pag-plot"></div>
+<div class="viz-row text-small"><span>● Odczyt</span><span>○ Szacunek dnia (10 i 12.10)</span><span>■ UI: odświeżenie niezweryfikowane (22.10)</span></div>
+<div id="pag-change" class="tabular-nums" aria-live="polite"></div>
+<div class="table-responsive"><table class="table table-sm"><thead><tr><th>Miara</th><th>11.10.2026</th><th id="pag-latest"></th><th>Zmiana</th></tr></thead><tbody id="pag-summary"></tbody></table></div>
+<details><summary>Historia i źródła</summary><div class="table-responsive"><table class="table table-sm"><thead><tr><th>Data</th><th id="pag-column">Gold</th><th>Status / źródło</th></tr></thead><tbody id="pag-history"></tbody></table></div></details>
+</div>
+<style>
+#pag-growth{color:var(--foreground)}#pag-growth svg{display:block;max-width:100%}#pag-growth svg text{fill:var(--foreground);font-size:12px}#pag-growth .domain,#pag-growth .tick line{stroke:var(--border)}#pag-plot{min-height:320px}#pag-change{margin:12px 0}#pag-growth .viz-row{gap:16px}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(()=>{
+const history=__PAG_HISTORY__;
+const root=document.getElementById('pag-growth'),select=root.querySelector('select'),box=root.querySelector('#pag-plot');
+const data=history.observations.map(d=>({...d,x:new Date(d.date+'T12:00:00Z'),ownership:d.leandro_shares!=null&&d.shares>0?100*d.leandro_shares/d.shares:null,perShare:d.value_gold!=null&&d.shares>0?d.value_gold/d.shares:null}));
+const metrics={value_gold:['Wartość spółki','Gold',2],shares:['Wyemitowane akcje','akcje',0],leandro_shares:['Akcje Leandro Daniels','akcje',0],ownership:['Udział Leandro','%',2],perShare:['Wartość aktywów na akcję','Gold/akcję',4],factories:['Fabryki','fabryki',0]};
+const statuses={confirmed:'Odczyt / dane użytkownika',confirmed_in_user_report:'Potwierdzone według raportu użytkownika',estimated_missing_day:'Szacunek brakującego dnia',saved_ui_refresh_unverified:'Zapis UI: odświeżenie niezweryfikowane'};
+const fmt=(v,n=2)=>v==null?'—':v.toLocaleString('pl-PL',{minimumFractionDigits:n,maximumFractionDigits:n});
+const dateLabel=d=>d.slice(8,10)+'.'+d.slice(5,7)+'.'+d.slice(0,4);
+const base=data.find(d=>d.date==='2026-10-11'),latest=data.at(-1);
+root.querySelector('#pag-latest').textContent=dateLabel(latest.date);
+Object.entries(metrics).forEach(([k,[name,unit,n]])=>{const tr=document.createElement('tr'),a=base[k],b=latest[k];[name+' ('+unit+')',fmt(a,n),fmt(b,n),a==null||b==null?'—':(b>=a?'+':'')+fmt(b-a,n)+(k==='ownership'?' pp':'')].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});root.querySelector('#pag-summary').append(tr)});
+function draw(){
+const key=select.value,[label,unit,n]=metrics[key],points=data.filter(d=>d[key]!=null),w=Math.max(280,box.clientWidth),h=330,m={l:76,r:20,t:38,b:64};
+const first=points.find(d=>d.status!=='estimated_missing_day'),last=points.at(-1),delta=last[key]-first[key];
+root.querySelector('#pag-change').textContent=(delta>=0?'+':'')+fmt(delta,n)+(key==='ownership'?' pp':' '+unit)+' · '+dateLabel(first.date)+' → '+dateLabel(last.date)+(key==='ownership'?'':' · '+(delta>=0?'+':'')+fmt(delta/first[key]*100,2)+'%');
+root.querySelector('#pag-column').textContent=label+' ('+unit+')';
+const body=root.querySelector('#pag-history');body.replaceChildren();data.forEach(d=>{const tr=document.createElement('tr');[dateLabel(d.date),fmt(d[key],n),statuses[d.status]||'Odczyt'].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});body.append(tr)});
+const row=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=3;const a=document.createElement('a');a.href='https://github.com/piotrzdrenka-droid/pag-chart/blob/dabc5284a8e3a2c2b851749b9b2a80d6f93eb245/pag-chart.png';a.textContent='Raport źródłowy 9–22.10.2026';a.target='_blank';a.rel='noopener';cell.append(a);row.append(cell);body.append(row);
+const svg=d3.select(box).selectAll('svg').data([null]).join('svg').attr('viewBox',`0 0 ${w} ${h}`).attr('width',w).attr('height',h).attr('role','img').attr('aria-label',label+' — historia '+dateLabel(data[0].date)+' do '+dateLabel(latest.date));svg.selectAll('*').remove();
+svg.append('title').text(label+'; dokładne wartości i statusy w tabeli historii');
+const x=d3.scaleUtc().domain(d3.extent(data,d=>d.x)).range([m.l+22,w-m.r-22]);
+const extent=d3.extent(points,d=>d[key]),pad=(extent[1]-extent[0])*.15||1;
+const y=d3.scaleLinear().domain([extent[0]-pad,extent[1]+pad]).nice().range([h-m.b-16,m.t+22]);
+svg.append('rect').attr('data-chart-frame','').attr('x',m.l).attr('y',m.t).attr('width',w-m.l-m.r).attr('height',h-m.t-m.b).attr('fill','none').attr('stroke','var(--border)');
+const ticks=w<500?[data[0].x,data[9].x,latest.x]:[data[0].x,data[4].x,data[8].x,data[13].x,latest.x];
+svg.append('g').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).tickValues(ticks).tickFormat(d3.utcFormat('%d.%m')));
+svg.append('g').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(v=>fmt(v,n>2?2:n)));
+svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('x',m.l).attr('y',18).text(unit);
+svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',w-m.r).attr('y',h-15).attr('text-anchor','end').text('Data · 2026');
+const line=d3.line().defined(d=>d[key]!=null&&d.status!=='estimated_missing_day'&&d.status!=='saved_ui_refresh_unverified').x(d=>x(d.x)).y(d=>y(d[key]));
+svg.append('path').attr('d',line(data)).attr('fill','none').attr('stroke','var(--viz-series-1)').attr('stroke-width',2);
+points.forEach((d,i)=>{const px=x(d.x),py=y(d[key]),estimated=d.status==='estimated_missing_day',unverified=d.status==='saved_ui_refresh_unverified';
+if(unverified)svg.append('rect').attr('x',px-5).attr('y',py-5).attr('width',10).attr('height',10).attr('fill','var(--viz-series-2)');
+else svg.append('circle').attr('cx',px).attr('cy',py).attr('r',5).attr('fill',estimated?'var(--background)':'var(--viz-series-1)').attr('stroke','var(--viz-series-1)').attr('stroke-width',2);
+if(i===0||i===points.length-1)svg.append('text').attr('data-value-label','').attr('x',px+(i===0?8:-8)).attr('y',py-16).attr('text-anchor',i===0?'start':'end').text(fmt(d[key],n));
+svg.append('circle').attr('data-chart-hit','').attr('cx',px).attr('cy',py).attr('r',22).attr('fill','transparent').attr('data-tooltip',dateLabel(d.date)+' · '+fmt(d[key],n)+' '+unit+' · '+statuses[d.status]);});
+const labels=svg.selectAll('.tick text,[data-value-label]').nodes(),seen=[];labels.forEach(el=>{const b=el.getBoundingClientRect(),collides=seen.some(a=>b.left<a.right+4&&b.right>a.left-4&&b.top<a.bottom+4&&b.bottom>a.top-4);if(collides&&el.hasAttribute('data-value-label'))el.remove();else seen.push(b)});
+}
+function apply(state){let key=state?.modelContent?.metric;if(key==='value')key='value_gold';if(key==='leandro')key='leandro_shares';if(metrics[key])select.value=key;draw()}
+select.addEventListener('change',()=>{draw();window.openai?.setWidgetState?.({modelContent:{metric:select.value},privateContent:null})?.catch(()=>{})});
+window.addEventListener('openai:set_globals',e=>apply(e.detail?.globals?.widgetState));new ResizeObserver(draw).observe(box);apply(window.openai?.widgetState);
+})();
+</script>
