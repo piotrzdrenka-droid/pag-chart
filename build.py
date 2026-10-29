@@ -58,7 +58,7 @@ for value in range(((int(low)+499)//500)*500,int(high),500):
     py=y(value);draw.line((left,py,right,py),fill=grid,width=1);text(left-18,py,number(value,0),24,muted,anchor='rm')
 for i,d in enumerate(rows):
     px=x(dates[i]);py=y(values[i]);status=d.get('status','confirmed')
-    if i and (dates[i]-dates[i-1]).days==1 and all(rows[j].get('status') not in ('estimated_missing_day','saved_ui_refresh_unverified') for j in (i-1,i)):
+    if i:
         draw.line((x(dates[i-1]),y(values[i-1]),px,py),fill=gold,width=4)
     if status=='saved_ui_refresh_unverified': draw.rectangle((px-7,py-7,px+7,py+7),fill=blue)
     else: draw.ellipse((px-6,py-6,px+6,py+6),fill=bg if status=='estimated_missing_day' else gold,outline=gold,width=3)
@@ -76,7 +76,8 @@ metrics=[(42,number(latest['shares'],0),'akcji'),(290,str(latest['factories']),'
 for px,value,label in metrics:
     text(px,904,value,32,fg,True)
     text(px,946,label,22,muted)
-text(42,1001,'Wycena aktywów, nie zysk. Brak pomiarów 23–27.10.',22,muted)
+text(42,992,'Linia łączy zapisy; brak pomiarów 23–27.10.',22,muted)
+text(42,1024,'Wycena aktywów, nie zysk.',22,muted)
 image.save(ROOT/'pag-chart.tmp.png')
 os.replace(ROOT/'pag-chart.tmp.png',ROOT/'pag-chart.png')
 print(json.dumps({'records':len(rows),'latest':latest['date'],'value':latest['value_gold'],'dimensions':image.size},ensure_ascii=False))

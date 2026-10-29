@@ -2,7 +2,7 @@
 <h2>PAG · rozwój spółki</h2>
 <div class="viz-controls"><label class="form-label">Miara<select class="form-select" id="pag-metric"><option value="value_gold">Wartość spółki · Gold</option><option value="shares">Wyemitowane akcje</option><option value="leandro_shares">Akcje Leandro Daniels</option><option value="ownership">Udział Leandro · %</option><option value="perShare">Wartość aktywów na akcję · Gold</option><option value="factories">Fabryki</option></select></label></div>
 <div id="pag-plot"></div>
-<div class="viz-row text-small"><span>● Odczyt</span><span>○ Szacunek dnia (10 i 12.10)</span><span>■ UI: odświeżenie niezweryfikowane (22.10)</span></div>
+<div class="viz-row text-small"><span>● Odczyt</span><span>○ Szacunek dnia (10 i 12.10)</span><span>■ UI: odświeżenie niezweryfikowane (22.10)</span><span>Linia łączy zapisy; nie oznacza dodatkowych pomiarów.</span></div>
 <div id="pag-change" class="tabular-nums" aria-live="polite"></div>
 <div class="table-responsive"><table class="table table-sm"><thead><tr><th>Miara</th><th>11.10.2026</th><th id="pag-latest"></th><th>Zmiana</th></tr></thead><tbody id="pag-summary"></tbody></table></div>
 <details><summary>Historia i źródła</summary><div class="table-responsive"><table class="table table-sm"><thead><tr><th>Data</th><th id="pag-column">Gold</th><th>Status / źródło</th></tr></thead><tbody id="pag-history"></tbody></table></div></details>
@@ -41,8 +41,8 @@ svg.append('g').attr('transform',`translate(0,${h-m.b})`).call(d3.axisBottom(x).
 svg.append('g').attr('transform',`translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(v=>fmt(v,n>2?2:n)));
 svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('x',m.l).attr('y',18).text(unit);
 svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',w-m.r).attr('y',h-15).attr('text-anchor','end').text('Data · 2026');
-const line=d3.line().defined(d=>d[key]!=null&&d.status!=='estimated_missing_day'&&d.status!=='saved_ui_refresh_unverified').x(d=>x(d.x)).y(d=>y(d[key]));
-svg.append('path').attr('d',line(data)).attr('fill','none').attr('stroke','var(--viz-series-1)').attr('stroke-width',2);
+const line=d3.line().x(d=>x(d.x)).y(d=>y(d[key]));
+svg.append('path').attr('d',line(points)).attr('fill','none').attr('stroke','var(--viz-series-1)').attr('stroke-width',2);
 points.forEach((d,i)=>{const px=x(d.x),py=y(d[key]),estimated=d.status==='estimated_missing_day',unverified=d.status==='saved_ui_refresh_unverified';
 if(unverified)svg.append('rect').attr('x',px-5).attr('y',py-5).attr('width',10).attr('height',10).attr('fill','var(--viz-series-2)');
 else svg.append('circle').attr('cx',px).attr('cy',py).attr('r',5).attr('fill',estimated?'var(--background)':'var(--viz-series-1)').attr('stroke','var(--viz-series-1)').attr('stroke-width',2);
