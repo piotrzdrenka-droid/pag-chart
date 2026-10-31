@@ -69,7 +69,7 @@ for i,d in enumerate(rows):
     label_font=font(24,True)
     width=draw.textbbox((0,0),label,font=label_font)[2]
     lx=min(max(px,left+width/2+2),right-width/2-2)
-    options=[-30,32,-62,64,-94,96] if i%2==0 else [32,-30,64,-62,96,-94]
+    options=[sign*offset for offset in range(30,285,32) for sign in ((-1,1) if i%2==0 else (1,-1))]
     for offset in options:
         ly=py+offset
         rect=(lx-width/2-5,ly-16,lx+width/2+5,ly+16)

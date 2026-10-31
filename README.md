@@ -4,9 +4,9 @@
 
 [Wersja interaktywna — pobierz plik i otwórz w przeglądarce](pag-chart.html) · [Historia pomiarów](history.json) · [Spółka w Vexa](https://vexa.e-sim.org/stockCompany.html?id=45)
 
-Ostatni zachowany odczyt: **30 października 2026, 20:01 czasu polskiego** — **5135,62 Gold**, 2000 akcji, 17 fabryk i 10 udziałowców. Leandro Daniels: 1811 akcji, czyli 90,55%. Wartość aktywów na akcję: 2,5678 Gold (w Vexa: 2,57 Gold). Od 29 października: +129,87 Gold (+2,59%); +85 akcji ogółem, +25 akcji Leandro. Raportu nie odświeżano podczas odczytu.
+Ostatni zachowany odczyt: **31 października 2026, 18:06 czasu polskiego** — **5571,68 Gold**, 2089 akcji, 18 fabryk i 11 udziałowców. Leandro Daniels: 1860 akcji, czyli 89,04%. Wartość aktywów na akcję: 2,6672 Gold (w Vexa: 2,67 Gold). Od 30 października: +436,06 Gold (+8,49%); +89 akcji ogółem, +49 akcji Leandro i +1 fabryka. Raportu nie odświeżano podczas odczytu.
 
-Historia zawiera 17 zapisów od 9 do 30 października. Zmiana wartości od 9 października: +2 522,40 Gold (+96,52%); od 11 października: +2 316,07 Gold (+82,14%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
+Historia zawiera 18 zapisów od 9 do 31 października. Zmiana wartości od 9 października: +2 958,46 Gold (+113,21%); od 11 października: +2 752,13 Gold (+97,61%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
 
 ## Źródła i statusy
 
