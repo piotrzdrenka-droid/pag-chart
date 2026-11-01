@@ -4,9 +4,9 @@
 
 [Wersja interaktywna — pobierz plik i otwórz w przeglądarce](pag-chart.html) · [Historia pomiarów](history.json) · [Spółka w Vexa](https://vexa.e-sim.org/stockCompany.html?id=45)
 
-Ostatni zachowany odczyt: **31 października 2026, 18:06 czasu polskiego** — **5571,68 Gold**, 2089 akcji, 18 fabryk i 11 udziałowców. Leandro Daniels: 1860 akcji, czyli 89,04%. Wartość aktywów na akcję: 2,6672 Gold (w Vexa: 2,67 Gold). Od 30 października: +436,06 Gold (+8,49%); +89 akcji ogółem, +49 akcji Leandro i +1 fabryka. Raportu nie odświeżano podczas odczytu.
+Ostatni zachowany odczyt: **1 listopada 2026, 20:48 czasu polskiego** — **6116,74 Gold**, 2186 akcji, 18 fabryk i 11 udziałowców. Leandro Daniels: 1955 akcji, czyli 89,43%. Wartość aktywów na akcję: 2,7981 Gold (w Vexa: 2,80 Gold). Od 31 października: +545,06 Gold (+9,78%); +97 akcji ogółem i +95 akcji Leandro. Raportu nie odświeżano podczas odczytu.
 
-Historia zawiera 18 zapisów od 9 do 31 października. Zmiana wartości od 9 października: +2 958,46 Gold (+113,21%); od 11 października: +2 752,13 Gold (+97,61%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
+Historia zawiera 19 zapisów od 9 października do 1 listopada. Zmiana wartości od 9 października: +3 503,52 Gold (+134,07%); od 11 października: +3 297,19 Gold (+116,94%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
 
 ## Źródła i statusy
 
@@ -17,6 +17,7 @@ Historia zawiera 18 zapisów od 9 do 31 października. Zmiana wartości od 9 pa�
 - 28 października: wcześniejszy odczyt publicznej strony Vexa. Czas zapisu nie jest czasem aktualizacji wyceny aktywów.
 - 29 października: odczyt publicznej strony Vexa; serwis potwierdził odświeżenie raportu.
 - 30 października, 20:01 Europe/Warsaw: odczyt widocznej strony Vexa, bez wywołania odświeżenia raportu.
+- 1 listopada, 20:48 Europe/Warsaw: odczyt publicznego HTML Vexa bez logowania przez HTTP GET; bez wywołania odświeżenia raportu.
 - Dywidenda 200 Gold z 13 października według raportu jest osobnym zdarzeniem, nie została doliczona do wyceny.
 
 Brakujące metryki są zapisane jako `null`. Nie interpolujemy brakujących dni jako pomiarów. Nie ma odczytów z 23–27 października.
