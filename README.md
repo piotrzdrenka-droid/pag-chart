@@ -4,9 +4,9 @@
 
 [Wersja interaktywna — pobierz plik i otwórz w przeglądarce](pag-chart.html) · [Historia pomiarów](history.json) · [Spółka w Vexa](https://vexa.e-sim.org/stockCompany.html?id=45)
 
-Ostatni zachowany odczyt: **2 listopada 2026, 18:35 czasu polskiego** — **6449,28 Gold**, 2234 akcji, 18 fabryk i 11 udziałowców. Leandro Daniels: 2000 akcji, czyli 89,53%. Wartość aktywów na akcję: 2,8869 Gold (w Vexa: 2,89 Gold). Od 1 listopada: +332,54 Gold (+5,44%); +48 akcji ogółem i +45 akcji Leandro. Raportu nie odświeżano podczas odczytu.
+Ostatni zachowany odczyt: **3 listopada 2026, 09:56 czasu polskiego** — **6813,09 Gold**, 2300 akcji, 18 fabryk i 11 udziałowców. Leandro Daniels: 2000 akcji, czyli 86,96%. Wartość aktywów na akcję: 2,9622 Gold (w Vexa: 2,96 Gold). Od 2 listopada: +363,81 Gold (+5,64%); +66 akcji ogółem; liczba akcji Leandro bez zmian. Raportu nie odświeżano podczas odczytu.
 
-Historia zawiera 20 zapisów od 9 października do 2 listopada. Zmiana wartości od 9 października: +3 836,06 Gold (+146,79%); od 11 października: +3 629,73 Gold (+128,73%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
+Historia zawiera 21 zapisów od 9 października do 3 listopada. Zmiana wartości od 9 października: +4 199,87 Gold (+160,72%); od 11 października: +3 993,54 Gold (+141,64%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
 
 ## Źródła i statusy
 
@@ -19,6 +19,7 @@ Historia zawiera 20 zapisów od 9 października do 2 listopada. Zmiana wartości
 - 30 października, 20:01 Europe/Warsaw: odczyt widocznej strony Vexa, bez wywołania odświeżenia raportu.
 - 1 listopada, 20:48 Europe/Warsaw: odczyt publicznego HTML Vexa bez logowania przez HTTP GET; bez wywołania odświeżenia raportu.
 - 2 listopada, 18:35 Europe/Warsaw: odczyt publicznego HTML Vexa bez logowania przez HTTP GET; bez wywołania odświeżenia raportu.
+- 3 listopada, 09:56 Europe/Warsaw: odczyt publicznego HTML Vexa bez logowania przez HTTP GET; bez wywołania odświeżenia raportu.
 - Dywidenda 200 Gold z 13 października według raportu jest osobnym zdarzeniem, nie została doliczona do wyceny.
 
 Brakujące metryki są zapisane jako `null`. Nie interpolujemy brakujących dni jako pomiarów. Nie ma odczytów z 23–27 października.
