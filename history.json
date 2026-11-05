@@ -336,6 +336,21 @@
       "source": "Odczyt publicznego HTML strony Vexa przez HTTP GET bez logowania i bez odświeżania raportu. Czas odczytu nie potwierdza czasu wyceny aktywów.",
       "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
       "report_refresh_confirmed": false
+    },
+    {
+      "date": "2026-11-05",
+      "observed_at": "2026-11-05T08:56:47Z",
+      "value_gold": 7409.74,
+      "shares": 2410,
+      "leandro_shares": 2000,
+      "leandro_percent_reported": 87.55,
+      "factories": 18,
+      "shareholders": 11,
+      "reported_book_value_per_share_gold": 3.07,
+      "status": "confirmed",
+      "source": "Odczyt publicznego HTML strony Vexa przez HTTP GET bez logowania i bez odświeżania raportu. Czas odczytu nie potwierdza czasu wyceny aktywów.",
+      "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
+      "report_refresh_confirmed": false
     }
   ],
   "events": [
