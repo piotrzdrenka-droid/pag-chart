@@ -59,28 +59,11 @@ for value in range(((int(low)+499)//500)*500,int(high),500):
 # Draw connectors before markers so they do not overpaint hollow points.
 for i in range(1,len(rows)):
     draw.line((x(dates[i-1]),y(values[i-1]),x(dates[i]),y(values[i])),fill=gold,width=4)
-occupied=[]
 for i,d in enumerate(rows):
     px=x(dates[i]);py=y(values[i]);status=d.get('status','confirmed')
     if status=='saved_ui_refresh_unverified': draw.rectangle((px-7,py-7,px+7,py+7),fill=blue)
     else: draw.ellipse((px-6,py-6,px+6,py+6),fill=bg if status=='estimated_missing_day' else gold,outline=gold,width=3)
     if i==len(rows)-1: draw.ellipse((px-8,py-8,px+8,py+8),fill=gold)
-    label=number(values[i])
-    label_font=font(24,True)
-    width=draw.textbbox((0,0),label,font=label_font)[2]
-    lx=min(max(px,left+width/2+2),right-width/2-2)
-    options=[sign*offset for offset in range(30,285,32) for sign in ((-1,1) if i%2==0 else (1,-1))]
-    for offset in options:
-        ly=py+offset
-        rect=(lx-width/2-5,ly-16,lx+width/2+5,ly+16)
-        if rect[1]<top-10 or rect[3]>bottom+16: continue
-        if not any(rect[0]<r[2]+8 and rect[2]>r[0]-8 and rect[1]<r[3]+8 and rect[3]>r[1]-8 for r in occupied):
-            break
-    else: raise ValueError('No non-overlapping position for '+d['date'])
-    occupied.append(rect)
-    if abs(offset)>35: draw.line((px,py,lx,ly+(16 if offset<0 else -16)),fill=muted,width=1)
-    draw.rectangle(rect,fill=bg)
-    text(lx,ly,label,24,fg,True,anchor='mm')
 tick_indexes=sorted(set([0, min(4,len(rows)-1),min(8,len(rows)-1),min(13,len(rows)-1),len(rows)-1]))
 for i in tick_indexes:
     text(x(dates[i]),660,dates[i].strftime('%d.%m'),24,muted,anchor='mt')
