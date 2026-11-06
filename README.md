@@ -4,9 +4,7 @@
 
 [Wersja interaktywna — pobierz plik i otwórz w przeglądarce](pag-chart.html) · [Historia pomiarów](history.json) · [Spółka w Vexa](https://vexa.e-sim.org/stockCompany.html?id=45)
 
-Ostatni zachowany odczyt: **3 listopada 2026, 15:11 czasu polskiego** — **8466,20 Gold**, 2640 akcji, 18 fabryk i 11 udziałowców. Leandro Daniels: 2000 akcji, czyli 87,12%. Wartość aktywów na akcję: 3,2069 Gold (w Vexa: 3,21 Gold). Od 2 listopada: +1 056,46 Gold (+14,26%); +230 akcji ogółem; +190 akcji Leandro. Raportu nie odświeżano podczas odczytu.
-
-Historia zawiera 24 zapisów od 9 października do 3 listopada. Zmiana wartości od 9 października: +5 852,98 Gold (+223,98%); od 11 października: +5 646,65 Gold (+200,27%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
+Ostatni zachowany odczyt: **6 listopada 2026, 15:11 czasu polskiego** — **8466,20 Gold**, 2640 akcji i 21 firm. Leandro Daniels: 2300 akcji (87,12%). Wartość aktywów na akcję: 3,2069 Gold (w Vexa: 3,21 Gold). Od 5 listopada: +1056,46 Gold (+14,26%); +230 akcji ogółem i +300 akcji Leandro. Odczyt bez odświeżania raportu.\r\n\r\nHistoria zawiera 24 zapisy od 9 października do 6 listopada. Zmiana wartości od 9 października: +5852,98 Gold (+223,98%); od 11 października: +5646,65 Gold (+200,27%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
 
 ## Źródła i statusy
 
@@ -23,7 +21,7 @@ Historia zawiera 24 zapisów od 9 października do 3 listopada. Zmiana wartości
 - 3 listopada, 16:25 Europe/Warsaw: odczyt publicznego HTML Vexa bez logowania przez HTTP GET; bez wywołania odświeżenia raportu.
 - 3 listopada, 21:29 Europe/Warsaw: odczyt publicznego HTML Vexa bez logowania przez HTTP GET; bez wywołania odświeżenia raportu.
 - 3 listopada, 15:11 Europe/Warsaw: odczyt publicznego HTML Vexa bez logowania przez HTTP GET; bez wywołania odświeżenia raportu.
-- Dywidenda 200 Gold z 13 października według raportu jest osobnym zdarzeniem, nie została doliczona do wyceny.
+- Korekta odczytu 6 listopada: wiersz imienny Leandro Daniels wskazuje 2300 z 2640 akcji (87,12%); strona podaje 21 firm.\r\n- Dywidenda 200 Gold z 13 października według raportu jest osobnym zdarzeniem, nie została doliczona do wyceny.
 
 Brakujące metryki są zapisane jako `null`. Nie interpolujemy brakujących dni jako pomiarów. Nie ma odczytów z 23–27 października.
 

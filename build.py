@@ -70,7 +70,7 @@ for i in tick_indexes:
 text(42,705,'● Odczyt    ○ Szacunek: 10 i 12.10',22,muted)
 text(685,705,'■ 22.10: zapis UI, odświeżenie niezweryfikowane',22,muted)
 draw.line((42,750,1558,750),fill=grid,width=2)
-metrics=[(42,number(latest['shares'],0),'akcji'),(430,str(latest['factories']),'fabryk'),(785,number(100*latest['leandro_shares']/latest['shares'])+'%','udział Leandro'),(1235,number(latest['value_gold']/latest['shares'],2)+' G','na akcję')]
+metrics=[(42,number(latest['shares'],0),'akcji'),(430,str(latest['factories']),'firm'),(785,number(100*latest['leandro_shares']/latest['shares'])+'%','udział Leandro'),(1235,number(latest['value_gold']/latest['shares'],2)+' G','na akcję')]
 for px,value,label in metrics:
     text(px,767,value,32,fg,True)
     text(px,810,label,22,muted)
