@@ -353,6 +353,21 @@
       "report_refresh_confirmed": false
     },
     {
+      "date": "2026-11-06",
+      "observed_at": "2026-11-06T14:11:00Z",
+      "value_gold": 8466.2,
+      "shares": 2640,
+      "leandro_shares": 2300,
+      "leandro_percent_reported": 87.12,
+      "factories": 21,
+      "shareholders": 11,
+      "reported_book_value_per_share_gold": 3.2068939393939395,
+      "status": "confirmed",
+      "source": "Odczyt publicznego HTML Vexa przez HTTP GET bez logowania i odświeżania raportu; Leandro Daniels 2300 akcji (wiersz imienny), Total companies 21.",
+      "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
+      "report_refresh_confirmed": false
+    },
+    {
       "date": "2026-11-07",
       "observed_at": "2026-11-07T18:42:40Z",
       "value_gold": 8552.8,
