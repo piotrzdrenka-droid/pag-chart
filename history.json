@@ -396,6 +396,21 @@
       "source": "Odczyt publicznego HTML Vexa przez HTTP GET bez logowania i bez odświeżania raportu; Leandro Daniels z wiersza imiennego; Total companies.",
       "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
       "report_refresh_confirmed": false
+    },
+    {
+      "date": "2026-11-09",
+      "observed_at": "2026-11-09T17:40:08Z",
+      "value_gold": 8745.07,
+      "shares": 2658,
+      "leandro_shares": 2300,
+      "leandro_percent_reported": 86.53,
+      "factories": 21,
+      "shareholders": 11,
+      "reported_book_value_per_share_gold": 3.290094055680963,
+      "status": "confirmed",
+      "source": "Odczyt publicznego HTML Vexa przez HTTP GET bez logowania i bez odświeżania raportu; Leandro Daniels z wiersza imiennego; Total companies.",
+      "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
+      "report_refresh_confirmed": false
     }
   ],
   "events": [
