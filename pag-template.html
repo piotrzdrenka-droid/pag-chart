@@ -1,5 +1,6 @@
 <div id="pag-growth">
 <h2>PAG · rozwój spółki</h2>
+<div id="pag-dividend-summary" class="tabular-nums" aria-label="Dividend summary"></div>
 <div class="viz-controls"><label class="form-label">Miara<select class="form-select" id="pag-metric"><option value="value_gold">Wartość spółki · Gold</option><option value="shares">Wyemitowane akcje</option><option value="leandro_shares">Akcje Leandro Daniels</option><option value="ownership">Udział Leandro · %</option><option value="perShare">Wartość aktywów na akcję · Gold</option><option value="factories">Fabryki</option></select></label></div>
 <div id="pag-plot"></div>
 <div class="viz-row text-small"><span>● Odczyt</span><span>○ Szacunek dnia (10 i 12.10)</span><span>■ UI: odświeżenie niezweryfikowane (22.10)</span><span>Linia łączy zapisy; nie oznacza dodatkowych pomiarów.</span></div>
@@ -8,7 +9,7 @@
 <details><summary>Historia i źródła</summary><div class="table-responsive"><table class="table table-sm"><thead><tr><th>Data</th><th id="pag-column">Gold</th><th>Status / źródło</th></tr></thead><tbody id="pag-history"></tbody></table></div></details>
 </div>
 <style>
-#pag-growth{color:var(--foreground)}#pag-growth svg{display:block;max-width:100%}#pag-growth svg text{fill:var(--foreground);font-size:12px}#pag-growth .domain,#pag-growth .tick line{stroke:var(--border)}#pag-plot{min-height:320px}#pag-change{margin:12px 0}#pag-growth .viz-row{gap:16px}
+#pag-growth{color:var(--foreground)}#pag-growth svg{display:block;max-width:100%}#pag-growth svg text{fill:var(--foreground);font-size:12px}#pag-growth .domain,#pag-growth .tick line{stroke:var(--border)}#pag-plot{min-height:320px}#pag-change{margin:12px 0}#pag-growth .viz-row{gap:16px}#pag-dividend-summary{margin:0 0 14px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-weight:600}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script>
@@ -21,6 +22,9 @@ const statuses={confirmed:'Odczyt / dane użytkownika',confirmed_in_user_report:
 const fmt=(v,n=2)=>v==null?'—':v.toLocaleString('pl-PL',{minimumFractionDigits:n,maximumFractionDigits:n});
 const dateLabel=d=>d.slice(8,10)+'.'+d.slice(5,7)+'.'+d.slice(0,4);
 const base=data.find(d=>d.date==='2026-10-11'),latest=data.at(-1);
+const dividendTotal=(history.dividend_distributions||[]).reduce((sum,d)=>sum+Number(d.amount_gold||0),0);
+const dividendPerCurrentShare=latest.shares>0?dividendTotal/latest.shares:null;
+root.querySelector('#pag-dividend-summary').textContent='TOTAL DIVIDENDS PAID: '+fmt(dividendTotal,0)+' GOLD · CUMULATIVE DIVIDENDS PER CURRENTLY ISSUED SHARE: '+fmt(dividendPerCurrentShare,4)+' GOLD / SHARE · '+fmt(dividendTotal,0)+' Gold ÷ '+fmt(latest.shares,0)+' currently issued shares; distribution metric, not a share price or return.';
 root.querySelector('#pag-latest').textContent=dateLabel(latest.date);
 Object.entries(metrics).forEach(([k,[name,unit,n]])=>{const tr=document.createElement('tr'),a=base[k],b=latest[k];[name+' ('+unit+')',fmt(a,n),fmt(b,n),a==null||b==null?'—':(b>=a?'+':'')+fmt(b-a,n)+(k==='ownership'?' pp':'')].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});root.querySelector('#pag-summary').append(tr)});
 function draw(){
