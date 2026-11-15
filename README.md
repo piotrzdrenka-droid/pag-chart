@@ -2,12 +2,15 @@
 
 ![Rozwój wartości PAG](pag-chart.png)
 
-![Latest dividend payouts](pag-dividends-2026-11-14.png)
+![All logged dividend rounds](pag-dividend-payouts-summary.png)
+
+![Asset value plus paid dividends](pag-value-incl-dividends-2026-11-15.png)
 
 [Wersja interaktywna — pobierz plik i otwórz w przeglądarce](pag-chart.html) · [Historia pomiarów](history.json) · [Spółka w Vexa](https://vexa.e-sim.org/stockCompany.html?id=45)
 
-Ostatni zachowany odczyt: **6 listopada 2026, 15:11 czasu polskiego** — **8466,20 Gold**, 2640 akcji i 21 firm. Leandro Daniels: 2300 akcji (87,12%). Wartość aktywów na akcję: 3,2069 Gold (w Vexa: 3,21 Gold). Od 5 listopada: +1056,46 Gold (+14,26%); +230 akcji ogółem i +300 akcji Leandro. Odczyt bez odświeżania raportu.\r\n\r\nHistoria zawiera 24 zapisy od 9 października do 6 listopada. Zmiana wartości od 9 października: +5852,98 Gold (+223,98%); od 11 października: +5646,65 Gold (+200,27%). Wycena obejmuje przepływy kapitału i zmiany cen aktywów; nie jest zyskiem ani stopą zwrotu akcjonariusza. Wartość aktywów na akcję nie jest ceną transakcyjną.
+Ostatni odczyt widocznej strony Vexa: **15 listopada 2026, 18:33 czasu polskiego** — **9266,12 Gold**, 2800 akcji, 11 udziałowców i 24 firmy. Leandro Daniels: 2422 akcje (86,50%). Wyświetlana wartość aktywów na akcję: **3,31 Gold**. Względem 14 listopada: +19,16 Gold (+0,21%), +22 akcje ogółem, +2 akcje Leandro i +3 firmy. Odczyt bez odświeżania raportu; wartość pozostaje szacunkiem Vexa.
 
+Historia zawiera 31 zapisów do 15 listopada. Logi Vexa zawierają **975 Gold w siedmiu wypłatach**: 200 Gold (13 października), 275 Gold w czterech przelewach (30 października) i 500 Gold w dwóch przelewach (13–14 listopada). Kolejne rundy wzrosły o **37,50%** i **81,82%**. Odstępy między rundami w logach wyniosły około 17 dni, następnie 14–15 dni; statut opisuje dwutygodniowy plan, nie gwarancję. Wykres „wartość aktywów + wypłacone dywidendy” jest miarą skumulowaną, nie aktywami pozostającymi w spółce ani zyskiem akcjonariusza.
 ## Źródła i statusy
 
 - 9–22 października: [oryginalny raport graficzny](https://github.com/piotrzdrenka-droid/pag-chart/blob/dabc5284a8e3a2c2b851749b9b2a80d6f93eb245/pag-chart.png), przekazany przez użytkownika 29 października. Oznaczenie „potwierdzone według raportu” zachowuje deklarację źródła; nie oznacza niezależnej weryfikacji.

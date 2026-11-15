@@ -456,6 +456,20 @@
       "source": "Odczyt publicznego HTML Vexa przez HTTP GET bez logowania i bez odświeżania raportu; Leandro Daniels z wiersza imiennego; Total companies.",
       "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
       "report_refresh_confirmed": false
+    },
+    {
+      "date": "2026-11-15",
+      "observed_at": "2026-11-15T17:33:50Z",
+      "value_gold": 9266.12,
+      "shares": 2800,
+      "leandro_shares": 2422,
+      "leandro_percent_reported": 86.5,
+      "factories": 24,
+      "shareholders": 11,
+      "reported_book_value_per_share_gold": 3.31,
+      "status": "confirmed",
+      "source": "Odczyt widocznej strony spółki Vexa 15.11.2026, bez odświeżania raportu; wartość jest wyświetlaną szacowaną wartością aktywów.",
+      "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45"
     }
   ],
   "events": [
@@ -466,5 +480,54 @@
       "source": "Raport graficzny użytkownika",
       "notes": "Wypłata według raportu. Nie doliczono do wartości aktywów."
     }
-  ]
+  ],
+  "dividend_distributions": [
+    {
+      "server_time": "13:26:29",
+      "date": "2026-10-13",
+      "round": "2026-10-13",
+      "amount_gold": 200.0
+    },
+    {
+      "server_time": "01:20:30",
+      "date": "2026-10-30",
+      "round": "2026-10-30",
+      "amount_gold": 75.0
+    },
+    {
+      "server_time": "01:25:31",
+      "date": "2026-10-30",
+      "round": "2026-10-30",
+      "amount_gold": 75.0
+    },
+    {
+      "server_time": "01:35:32",
+      "date": "2026-10-30",
+      "round": "2026-10-30",
+      "amount_gold": 100.0
+    },
+    {
+      "server_time": "02:35:33",
+      "date": "2026-10-30",
+      "round": "2026-10-30",
+      "amount_gold": 25.0
+    },
+    {
+      "server_time": "16:23:57",
+      "date": "2026-11-13",
+      "round": "2026-11-13/14",
+      "amount_gold": 250.0
+    },
+    {
+      "server_time": "23:53:58",
+      "date": "2026-11-14",
+      "round": "2026-11-13/14",
+      "amount_gold": 250.0
+    }
+  ],
+  "dividend_definitions": {
+    "total_paid_gold": "Sum of logged Dividend paid entries; 975 Gold through 2026-11-14.",
+    "asset_value_plus_dividends_gold": "Displayed asset value plus cumulative dividends paid before the measurement time. Derived comparison; not assets still held by PAG.",
+    "measurement_timing": "The 2026-10-13 user-reported asset reading has no time, so the dividend-adjusted series is null on that date. The 2026-11-14 Vexa read preceded the 23:53:58 dividend payment."
+  }
 }
