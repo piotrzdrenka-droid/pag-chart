@@ -470,6 +470,21 @@
       "status": "confirmed",
       "source": "Odczyt widocznej strony spółki Vexa 15.11.2026, bez odświeżania raportu; wartość jest wyświetlaną szacowaną wartością aktywów.",
       "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45"
+    },
+    {
+      "date": "2026-11-15",
+      "observed_at": "2026-11-15T18:58:43Z",
+      "value_gold": 9261.95,
+      "shares": 2800,
+      "leandro_shares": 2422,
+      "leandro_percent_reported": 86.5,
+      "factories": 24,
+      "shareholders": 11,
+      "reported_book_value_per_share_gold": 3.31,
+      "status": "confirmed",
+      "source": "Odczyt widocznej strony spółki Vexa 15.11.2026 o 19:58 czasu polskiego, bez odświeżania raportu; wartość jest wyświetlanym szacunkiem aktywów.",
+      "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
+      "report_refresh_confirmed": false
     }
   ],
   "events": [
@@ -486,43 +501,43 @@
       "server_time": "13:26:29",
       "date": "2026-10-13",
       "round": "2026-10-13",
-      "amount_gold": 200.0
+      "amount_gold": 200
     },
     {
       "server_time": "01:20:30",
       "date": "2026-10-30",
       "round": "2026-10-30",
-      "amount_gold": 75.0
+      "amount_gold": 75
     },
     {
       "server_time": "01:25:31",
       "date": "2026-10-30",
       "round": "2026-10-30",
-      "amount_gold": 75.0
+      "amount_gold": 75
     },
     {
       "server_time": "01:35:32",
       "date": "2026-10-30",
       "round": "2026-10-30",
-      "amount_gold": 100.0
+      "amount_gold": 100
     },
     {
       "server_time": "02:35:33",
       "date": "2026-10-30",
       "round": "2026-10-30",
-      "amount_gold": 25.0
+      "amount_gold": 25
     },
     {
       "server_time": "16:23:57",
       "date": "2026-11-13",
       "round": "2026-11-13/14",
-      "amount_gold": 250.0
+      "amount_gold": 250
     },
     {
       "server_time": "23:53:58",
       "date": "2026-11-14",
       "round": "2026-11-13/14",
-      "amount_gold": 250.0
+      "amount_gold": 250
     }
   ],
   "dividend_definitions": {
