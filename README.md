@@ -14,7 +14,7 @@ Względem poprzedniego odczytu z 15 listopada o 19:58: wartość wzrosła o **44
 
 Historia zachowuje **33 pomiary** do 15 listopada, w tym trzy odczyty tego dnia. Logi Vexa potwierdzają **975 Gold w siedmiu wypłatach**: 200 Gold (13 października), 275 Gold w czterech przelewach (30 października) i 500 Gold w dwóch przelewach (13–14 listopada). Kolejne rundy wypłat wzrosły o **37,50%** oraz **81,82%**. Odstępy wyniosły około 17 dni, a potem 14–15 dni; statut określa plan dwutygodniowy, nie gwarantowaną regularność.
 
-The chart now shows **TOTAL DIVIDENDS PAID: 975 GOLD** and **CUMULATIVE DIVIDENDS PER CURRENTLY ISSUED SHARE: 0.3482 GOLD / SHARE**. This equals 975 Gold divided by 2,800 currently issued shares. It is a distribution metric, not a share price, future yield or individual shareholder return.
+The chart now shows **TOTAL DIVIDENDS PAID: 975 GOLD**, **DIVIDENDS PER CURRENTLY ISSUED SHARE: 0.3482 GOLD / SHARE**, and **CUMULATIVE RETURN ON 5 GOLD ISSUE PRICE: 6.96%**. The calculation is 0.3482 Gold in recorded dividends per currently issued share ÷ 5 Gold issue price. It is a distribution metric for a share bought at the original 5 Gold issue price, not a market price, future yield or individual shareholder return.
 
 Najnowsze **9 306,26 Gold wartości aktywów + 975 Gold wcześniej wypłaconych dywidend = 10 281,26 Gold** to miara skumulowana do porównania. Nie oznacza aktywów pozostających w spółce, zysku PAG ani stopy zwrotu akcjonariusza. Wycena aktywów obejmuje zmiany kapitału i cen.
 

@@ -20,11 +20,14 @@ const data=history.observations.map(d=>({...d,x:new Date(d.date+'T12:00:00Z'),ow
 const metrics={value_gold:['Wartość spółki','Gold',2],shares:['Wyemitowane akcje','akcje',0],leandro_shares:['Akcje Leandro Daniels','akcje',0],ownership:['Udział Leandro','%',2],perShare:['Wartość aktywów na akcję','Gold/akcję',4],factories:['Fabryki','fabryki',0]};
 const statuses={confirmed:'Odczyt / dane użytkownika',confirmed_in_user_report:'Potwierdzone według raportu użytkownika',estimated_missing_day:'Szacunek brakującego dnia',saved_ui_refresh_unverified:'Zapis UI: odświeżenie niezweryfikowane'};
 const fmt=(v,n=2)=>v==null?'—':v.toLocaleString('pl-PL',{minimumFractionDigits:n,maximumFractionDigits:n});
+const fmtEN=(v,n=2)=>v==null?'—':v.toLocaleString('en-US',{minimumFractionDigits:n,maximumFractionDigits:n});
 const dateLabel=d=>d.slice(8,10)+'.'+d.slice(5,7)+'.'+d.slice(0,4);
 const base=data.find(d=>d.date==='2026-10-11'),latest=data.at(-1);
 const dividendTotal=(history.dividend_distributions||[]).reduce((sum,d)=>sum+Number(d.amount_gold||0),0);
 const dividendPerCurrentShare=latest.shares>0?dividendTotal/latest.shares:null;
-root.querySelector('#pag-dividend-summary').textContent='TOTAL DIVIDENDS PAID: '+fmt(dividendTotal,0)+' GOLD · CUMULATIVE DIVIDENDS PER CURRENTLY ISSUED SHARE: '+fmt(dividendPerCurrentShare,4)+' GOLD / SHARE · '+fmt(dividendTotal,0)+' Gold ÷ '+fmt(latest.shares,0)+' currently issued shares; distribution metric, not a share price or return.';
+const issuePriceGold=5;
+const cumulativeDividendReturn=dividendPerCurrentShare==null?null:100*dividendPerCurrentShare/issuePriceGold;
+root.querySelector('#pag-dividend-summary').textContent='TOTAL DIVIDENDS PAID: '+fmtEN(dividendTotal,0)+' GOLD · DIVIDENDS PER CURRENTLY ISSUED SHARE: '+fmtEN(dividendPerCurrentShare,4)+' GOLD / SHARE · CUMULATIVE RETURN ON 5 GOLD ISSUE PRICE: '+fmtEN(cumulativeDividendReturn,2)+'% · '+fmtEN(dividendPerCurrentShare,4)+' Gold dividend ÷ 5 Gold issue price. Distribution metric, not a market price, future yield or individual shareholder return.';
 root.querySelector('#pag-latest').textContent=dateLabel(latest.date);
 Object.entries(metrics).forEach(([k,[name,unit,n]])=>{const tr=document.createElement('tr'),a=base[k],b=latest[k];[name+' ('+unit+')',fmt(a,n),fmt(b,n),a==null||b==null?'—':(b>=a?'+':'')+fmt(b-a,n)+(k==='ownership'?' pp':'')].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});root.querySelector('#pag-summary').append(tr)});
 function draw(){

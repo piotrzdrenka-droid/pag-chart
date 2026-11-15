@@ -1812,11 +1812,14 @@ const data=history.observations.map(d=&gt;({...d,x:new Date(d.date+&#x27;T12:00:
 const metrics={value_gold:[&#x27;Wartość spółki&#x27;,&#x27;Gold&#x27;,2],shares:[&#x27;Wyemitowane akcje&#x27;,&#x27;akcje&#x27;,0],leandro_shares:[&#x27;Akcje Leandro Daniels&#x27;,&#x27;akcje&#x27;,0],ownership:[&#x27;Udział Leandro&#x27;,&#x27;%&#x27;,2],perShare:[&#x27;Wartość aktywów na akcję&#x27;,&#x27;Gold/akcję&#x27;,4],factories:[&#x27;Fabryki&#x27;,&#x27;fabryki&#x27;,0]};
 const statuses={confirmed:&#x27;Odczyt / dane użytkownika&#x27;,confirmed_in_user_report:&#x27;Potwierdzone według raportu użytkownika&#x27;,estimated_missing_day:&#x27;Szacunek brakującego dnia&#x27;,saved_ui_refresh_unverified:&#x27;Zapis UI: odświeżenie niezweryfikowane&#x27;};
 const fmt=(v,n=2)=&gt;v==null?&#x27;—&#x27;:v.toLocaleString(&#x27;pl-PL&#x27;,{minimumFractionDigits:n,maximumFractionDigits:n});
+const fmtEN=(v,n=2)=&gt;v==null?&#x27;—&#x27;:v.toLocaleString(&#x27;en-US&#x27;,{minimumFractionDigits:n,maximumFractionDigits:n});
 const dateLabel=d=&gt;d.slice(8,10)+&#x27;.&#x27;+d.slice(5,7)+&#x27;.&#x27;+d.slice(0,4);
 const base=data.find(d=&gt;d.date===&#x27;2026-10-11&#x27;),latest=data.at(-1);
 const dividendTotal=(history.dividend_distributions||[]).reduce((sum,d)=&gt;sum+Number(d.amount_gold||0),0);
 const dividendPerCurrentShare=latest.shares&gt;0?dividendTotal/latest.shares:null;
-root.querySelector(&#x27;#pag-dividend-summary&#x27;).textContent=&#x27;TOTAL DIVIDENDS PAID: &#x27;+fmt(dividendTotal,0)+&#x27; GOLD · CUMULATIVE DIVIDENDS PER CURRENTLY ISSUED SHARE: &#x27;+fmt(dividendPerCurrentShare,4)+&#x27; GOLD / SHARE · &#x27;+fmt(dividendTotal,0)+&#x27; Gold ÷ &#x27;+fmt(latest.shares,0)+&#x27; currently issued shares; distribution metric, not a share price or return.&#x27;;
+const issuePriceGold=5;
+const cumulativeDividendReturn=dividendPerCurrentShare==null?null:100*dividendPerCurrentShare/issuePriceGold;
+root.querySelector(&#x27;#pag-dividend-summary&#x27;).textContent=&#x27;TOTAL DIVIDENDS PAID: &#x27;+fmtEN(dividendTotal,0)+&#x27; GOLD · DIVIDENDS PER CURRENTLY ISSUED SHARE: &#x27;+fmtEN(dividendPerCurrentShare,4)+&#x27; GOLD / SHARE · CUMULATIVE RETURN ON 5 GOLD ISSUE PRICE: &#x27;+fmtEN(cumulativeDividendReturn,2)+&#x27;% · &#x27;+fmtEN(dividendPerCurrentShare,4)+&#x27; Gold dividend ÷ 5 Gold issue price. Distribution metric, not a market price, future yield or individual shareholder return.&#x27;;
 root.querySelector(&#x27;#pag-latest&#x27;).textContent=dateLabel(latest.date);
 Object.entries(metrics).forEach(([k,[name,unit,n]])=&gt;{const tr=document.createElement(&#x27;tr&#x27;),a=base[k],b=latest[k];[name+&#x27; (&#x27;+unit+&#x27;)&#x27;,fmt(a,n),fmt(b,n),a==null||b==null?&#x27;—&#x27;:(b&gt;=a?&#x27;+&#x27;:&#x27;&#x27;)+fmt(b-a,n)+(k===&#x27;ownership&#x27;?&#x27; pp&#x27;:&#x27;&#x27;)].forEach(v=&gt;{const td=document.createElement(&#x27;td&#x27;);td.textContent=v;tr.append(td)});root.querySelector(&#x27;#pag-summary&#x27;).append(tr)});
 function draw(){
