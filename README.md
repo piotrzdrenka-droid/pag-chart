@@ -8,15 +8,15 @@
 
 [Interaktywny wykres](pag-growth.html) · [Eksport HTML](pag-chart.html) · [Historia danych](history.json) · [Spółka w Vexa](https://vexa.e-sim.org/stockCompany.html?id=45)
 
-Ostatni odczyt widocznej strony Vexa: **25 listopada 2026, 20:00 czasu polskiego** — wyświetlana szacowana wartość **10 411,11 Gold**, **3 055 akcji**, **14 udziałowców** i **26 firm**. Leandro Daniels ma **2 429 akcji (79,51%)**. Wyświetlana wartość aktywów na akcję: **3,41 Gold**. Odczyt wykonano bez odświeżania raportu.
+Ostatni odczyt widocznej strony Vexa: **26 listopada 2026, 02:02 czasu polskiego** — wyświetlana szacowana wartość **10 826,91 Gold**, **3 134 akcji**, **14 udziałowców** i **26 firm**. Leandro Daniels ma **2 484 akcje (79,26%)**. Wyświetlana wartość aktywów na akcję: **3,45 Gold**. Odczyt wykonano bez odświeżania raportu.
 
-Względem wcześniejszego odczytu z 25 listopada o 00:35: wartość wzrosła o **288,94 Gold (+2,85%)**. Przybyło **55 akcji**, **1 udziałowiec** i **2 firmy**; liczba akcji Leandro pozostała bez zmian. Jego udział zmniejszył się z 80,97% do **79,51%**.
+Względem odczytu z 25 listopada o 20:00: wartość wzrosła o **415,80 Gold (+3,99%)**. Przybyło **79 akcji**, w tym **55 akcji Leandro**; liczba udziałowców i firm pozostała bez zmian. Jego udział zmniejszył się z 79,51% do **79,26%**.
 
-Historia zachowuje **40 pomiarów** do 25 listopada, w tym dwa odczyty tego dnia i trzy odczyty z 15 listopada. Logi Vexa potwierdzają **975 Gold w siedmiu wypłatach**: 200 Gold (13 października), 275 Gold w czterech przelewach (30 października) i 500 Gold w dwóch przelewach (13–14 listopada). Kolejne rundy wypłat wzrosły o **37,50%** oraz **81,82%**. Odstępy wyniosły około 17 dni, a potem 14–15 dni; statut określa plan dwutygodniowy, nie gwarantowaną regularność.
+Historia zachowuje **41 pomiarów** do 26 listopada, w tym dwa odczyty z 25 listopada i trzy odczyty z 15 listopada. Logi Vexa potwierdzają **1 195 Gold w ośmiu wypłatach**: 200 Gold (13 października), 275 Gold w czterech przelewach (30 października), 500 Gold w dwóch przelewach (13–14 listopada) oraz **220 Gold 26 listopada**. Statut określa plan dwutygodniowy, nie gwarantowaną regularność.
 
-The chart now shows **TOTAL DIVIDENDS PAID: 975 GOLD**, **DIVIDENDS PER CURRENTLY ISSUED SHARE: 0.3191 GOLD / SHARE**, and **CUMULATIVE RETURN ON 5 GOLD ISSUE PRICE: 6.38%**. The calculation is 0.3191 Gold in recorded dividends per currently issued share ÷ 5 Gold issue price. It is a distribution metric for a share bought at the original 5 Gold issue price, not a market price, future yield or individual shareholder return.
+The chart now shows **TOTAL DIVIDENDS PAID: 1,195 GOLD**, **DIVIDENDS PER CURRENTLY ISSUED SHARE: 0.3813 GOLD / SHARE**, and **CUMULATIVE RETURN ON 5 GOLD ISSUE PRICE: 7.63%**. The calculation is 0.3813 Gold in recorded dividends per currently issued share ÷ 5 Gold issue price. It is a distribution metric for a share bought at the original 5 Gold issue price, not a market price, future yield or individual shareholder return.
 
-Najnowsze **10 411,11 Gold wartości aktywów + 975 Gold wcześniej wypłaconych dywidend = 11 386,11 Gold** to miara skumulowana do porównania. Nie oznacza aktywów pozostających w spółce, zysku PAG ani stopy zwrotu akcjonariusza. Wycena aktywów obejmuje zmiany kapitału i cen.
+Najnowsze **10 826,91 Gold wartości aktywów + 1 195 Gold wcześniej wypłaconych dywidend = 12 021,91 Gold** to miara skumulowana do porównania. Nie oznacza aktywów pozostających w spółce, zysku PAG ani stopy zwrotu akcjonariusza. Wycena aktywów obejmuje zmiany kapitału i cen.
 
 ## Źródła i statusy
 

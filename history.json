@@ -605,6 +605,21 @@
       "source": "Odczyt publicznego HTML Vexa przez HTTP GET bez logowania i bez odświeżania raportu; Leandro Daniels z wiersza imiennego; Total companies.",
       "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
       "report_refresh_confirmed": false
+    },
+    {
+      "date": "2026-11-26",
+      "observed_at": "2026-11-26T01:02:50Z",
+      "value_gold": 10826.91,
+      "shares": 3134,
+      "leandro_shares": 2484,
+      "leandro_percent_reported": 79.26,
+      "factories": 26,
+      "shareholders": 14,
+      "reported_book_value_per_share_gold": 3.45,
+      "status": "confirmed",
+      "source": "Odczyt publicznego HTML Vexa przez HTTP GET bez logowania i bez odświeżania raportu; Leandro Daniels z wiersza imiennego; Total companies.",
+      "source_url": "https://vexa.e-sim.org/stockCompany.html?id=45",
+      "report_refresh_confirmed": false
     }
   ],
   "events": [
@@ -614,6 +629,13 @@
       "amount_gold": 200,
       "source": "Raport graficzny użytkownika",
       "notes": "Wypłata według raportu. Nie doliczono do wartości aktywów."
+    },
+    {
+      "date": "2026-11-26",
+      "type": "dividend",
+      "amount_gold": 220,
+      "source": "Log Vexa: Dividend paid, 26.11.2026 00:31:27 czasu serwera",
+      "notes": "Potwierdzona wypłata; nie jest dodawana do wartości aktywów."
     }
   ],
   "dividend_distributions": [
@@ -658,10 +680,16 @@
       "date": "2026-11-14",
       "round": "2026-11-13/14",
       "amount_gold": 250
+    },
+    {
+      "server_time": "00:31:27",
+      "date": "2026-11-26",
+      "round": "2026-11-26",
+      "amount_gold": 220
     }
   ],
   "dividend_definitions": {
-    "total_paid_gold": "Sum of logged Dividend paid entries; 975 Gold through 2026-11-14.",
+    "total_paid_gold": "Sum of logged Dividend paid entries; 1,195 Gold through 2026-11-26.",
     "asset_value_plus_dividends_gold": "Displayed asset value plus cumulative dividends paid before the measurement time. Derived comparison; not assets still held by PAG.",
     "measurement_timing": "The 2026-10-13 user-reported asset reading has no time, so the dividend-adjusted series is null on that date. The 2026-11-14 Vexa read preceded the 23:53:58 dividend payment."
   }
